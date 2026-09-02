@@ -2,6 +2,8 @@
 
 A clean-room Rust + PyO3 implementation of the [AFISP](https://github.com/unc-vba/AFISP) workflow: stability analysis to find worst-performing data subsets, then interpretable subgroup phenotyping.
 
+**Full documentation:** [DOCUMENTATION.md](DOCUMENTATION.md)
+
 Two Python APIs ship in one package:
 
 | Import | Use when |
