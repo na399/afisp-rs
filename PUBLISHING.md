@@ -20,7 +20,15 @@ Use a **project-scoped** PyPI token when possible. The workflow reads it as `MAT
 - PyPI: [pypi.org/project/afisp-rs](https://pypi.org/project/afisp-rs/) — must be free or owned by you
 - crates.io: `cargo publish --dry-run` locally to confirm `afisp_rs` is available
 
-### 3. First manual publish (optional sanity check)
+### 3. crates.io account requirements
+
+Your crates.io account must have a **verified email address** before `cargo publish` succeeds. If the release job fails with:
+
+> A verified email address is required to publish crates to crates.io
+
+Visit [crates.io/settings/profile](https://crates.io/settings/profile), verify your email, then re-run the failed `publish-crate` job or push a patch tag (e.g. `v0.1.1`).
+
+### 4. First manual publish (optional sanity check)
 
 Before automating, you can dry-run locally:
 
