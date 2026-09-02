@@ -2,7 +2,7 @@
 name = "afisp_rs"
 version = "0.1.0"
 edition = "2021"
-license = "MIT OR Apache-2.0"
+license = "MIT"
 description = "Clean-room Rust + PyO3 implementation of the AFISP core algorithms"
 readme = "README.md"
 authors = ["AFISP contributors"]

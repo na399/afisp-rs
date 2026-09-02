@@ -149,4 +149,4 @@ Maintainers: see [PUBLISHING.md](PUBLISHING.md). Releases are automated on `v*` 
 
 ## License
 
-Dual-licensed under MIT OR Apache-2.0.
+MIT License. See [LICENSE](LICENSE).

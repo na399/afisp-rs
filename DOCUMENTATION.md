@@ -471,3 +471,9 @@ Maintainers: see [PUBLISHING.md](PUBLISHING.md).
 - PyPI: https://pypi.org/project/afisp-rs/
 - crates.io: https://crates.io/crates/afisp_rs
 - docs.rs: https://docs.rs/afisp_rs
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
