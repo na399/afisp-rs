@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "afisp-rs"
-version = "0.1.0"
+version = "0.1.1"
 description = "Clean-room Rust + PyO3 implementation of the AFISP core algorithms"
 readme = "README.md"
 requires-python = ">=3.9"

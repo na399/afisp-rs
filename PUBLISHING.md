@@ -44,7 +44,7 @@ maturin build --release --features extension-module
 
 Workflow file: [`.github/workflows/release.yml`](.github/workflows/release.yml)
 
-**Trigger:** push a tag `v*` (e.g. `v0.1.0`)
+**Trigger:** push a tag `v*` (e.g. `v0.1.1`)
 
 **Jobs:**
 
@@ -60,15 +60,15 @@ Workflow file: [`.github/workflows/release.yml`](.github/workflows/release.yml)
 
 ```bash
 # 1. Bump version in BOTH files (keep in sync)
-#    Cargo.toml      version = "0.1.0"
-#    pyproject.toml  version = "0.1.0"
+#    Cargo.toml      version = "0.1.1"
+#    pyproject.toml  version = "0.1.1"
 
 # 2. Commit and tag
 git add Cargo.toml pyproject.toml Cargo.lock
-git commit -m "Release 0.1.0"
-git tag v0.1.0
+git commit -m "Release 0.1.1"
+git tag v0.1.1
 git push origin main
-git push origin v0.1.0
+git push origin v0.1.1
 ```
 
 The tag push starts the release workflow. Monitor **Actions → Release**.
