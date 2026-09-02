@@ -3,6 +3,12 @@ import numpy as np
 from afisp_rs import WorstSubsetFinder, SubgroupPhenotyper, brier_loss
 
 
+def _summary_rows(summary):
+    if hasattr(summary, "to_dict"):
+        return summary.to_dict(orient="records")
+    return list(summary)
+
+
 def test_end_to_end_smoke():
     rng = np.random.default_rng(7)
     n = 200
@@ -85,10 +91,12 @@ def test_fit_binary_preserves_prepared_literals_and_exposes_literal_metadata():
     )
 
     summary = phen.summary_table()
-    assert {"literal_indices", "literal_names", "literal_signs", "literal_count"} <= set(summary.columns)
-    assert summary["literal_count"].max() >= 2
+    rows = _summary_rows(summary)
+    assert rows
+    assert {"literal_indices", "literal_names", "literal_signs", "literal_count"} <= set(rows[0].keys())
+    assert max(row["literal_count"] for row in rows) >= 2
 
-    multivariate = summary.loc[summary["literal_count"].ge(2)].iloc[0]
+    multivariate = next(row for row in rows if row["literal_count"] >= 2)
     assert multivariate["literal_indices"] == [0, 1]
     assert multivariate["literal_names"] == ["Sepsis", "Invasive ventilation"]
     assert multivariate["literal_signs"] == [True, True]
