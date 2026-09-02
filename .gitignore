@@ -1,0 +1,13 @@
+/target/
+**/__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.egg-info/
+.venv/
+dist/
+build/
+stability_cross_validation_report.json
+.pytest_cache/
+.mypy_cache/
+.DS_Store

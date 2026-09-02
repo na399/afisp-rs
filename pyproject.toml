@@ -1,0 +1,45 @@
+[build-system]
+requires = ["maturin>=1.5,<2"]
+build-backend = "maturin"
+
+[project]
+name = "afisp-rs"
+version = "0.1.0"
+description = "Clean-room Rust + PyO3 implementation of the AFISP core algorithms"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT OR Apache-2.0" }
+authors = [{ name = "AFISP contributors" }]
+dependencies = ["numpy>=1.24"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Rust",
+  "License :: OSI Approved :: MIT License",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/na399/afisp-rs"
+Repository = "https://github.com/na399/afisp-rs"
+Documentation = "https://docs.rs/afisp_rs"
+
+[project.optional-dependencies]
+original = [
+  "scikit-learn>=1.3",
+  "interpret>=0.4",
+  "pandas>=1.5",
+  "statsmodels>=0.14",
+  "matplotlib>=3.7",
+  "tqdm>=4.66",
+]
+demo = ["afisp-rs[original]", "torch>=2.0"]
+test = ["afisp-rs[original]", "pytest>=7.0"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "afisp_rs._core"
+features = ["extension-module"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

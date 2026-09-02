@@ -1,0 +1,10 @@
+/target
+/python
+/tests
+/examples
+/scripts
+/.github
+/.pytest_cache
+**/__pycache__
+stability_cross_validation_report.json
+PUBLISHING.md

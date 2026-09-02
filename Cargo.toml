@@ -1,0 +1,34 @@
+[package]
+name = "afisp_rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Clean-room Rust + PyO3 implementation of the AFISP core algorithms"
+readme = "README.md"
+authors = ["AFISP contributors"]
+repository = "https://github.com/na399/afisp-rs"
+homepage = "https://github.com/na399/afisp-rs"
+documentation = "https://docs.rs/afisp_rs"
+keywords = ["ml", "fairness", "auditing", "clinical-ai", "pyo3"]
+categories = ["science", "algorithms"]
+exclude = [
+  "/python/",
+  "/tests/",
+  "/examples/",
+  "/scripts/",
+  "/.github/",
+  "stability_cross_validation_report.json",
+  "PUBLISHING.md",
+]
+
+[lib]
+name = "afisp_rs"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+extension-module = ["dep:numpy", "dep:pyo3", "pyo3/extension-module"]
+
+[dependencies]
+pyo3 = { version = "0.28", optional = true }
+numpy = { version = "0.28", optional = true }
